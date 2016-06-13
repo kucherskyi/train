@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 
 """
-Task06 Module
-=============
-
-Updates a current date and time in a file's first line (stored in the first 50
-characters). A file shall be specified as a first argument. Other file content
-than first 50 characters shall not be modified.
+Write a program that updates a current date and time in a file's first
+line (stored in the first 50 characters). A file shall be specified
+as a first argument. Other file content than first 50
+characters shall not be modified.
 """
 
 
