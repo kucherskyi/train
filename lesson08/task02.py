@@ -5,7 +5,6 @@ Write a simple parametrized decorator so that the below code snippet prints
 Hello\nWorld to the standard output:
 """
 
-
 def decorator(word):
 
     def decorator_inner(func):

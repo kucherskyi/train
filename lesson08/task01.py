@@ -17,26 +17,30 @@ transactions for different functions.
 
 def decorator(func):
 
-    func.counter = 0
+    func.number = 0
 
     def wrapper(*args):
-        func.counter += 1
-        print 'Transaction {} for {} started.' .format(func.counter,
-                                                       func.__name__)
+        func.number += 1
+        name = func.__name__
+        print 'Transaction {} for {} started.' .format(func.number, name)
         try:
             result = func(*args)
-            print 'Transaction {} for {} completed' .format(func.counter,
-                                                            func.__name__)
+            print 'Transaction {} for {} completed' .format(func.number, name)
             return result
-        except:
-            print 'Transaction {} for {} cancelled', format(func.counter,
-                                                            func.__name__)
+        except Exception, error:
+            print 'Transaction {} for {} cancelled at transaction start. \nError : {}' .format(func.number, name, error)
 
     return wrapper
 
 
 @decorator
-def mult(a, b):
+def multiplication(a, b):
     return a * b
 
-print mult('sss', 3)
+@decorator
+def division(a, b):
+    return a / b
+
+print multiplication(2, 4)
+print division(2, 0)
+print multiplication(2, 4)

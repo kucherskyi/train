@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 """
 Write a function which takes a string and replaces all vocal letters in it to
 an uppercase using a str.replace method.
